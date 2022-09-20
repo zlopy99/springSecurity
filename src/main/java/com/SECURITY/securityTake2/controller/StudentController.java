@@ -1,10 +1,9 @@
 package com.SECURITY.securityTake2.controller;
 
+import com.SECURITY.securityTake2.JWT.JwtUsernamePasswordAuthFilter;
 import com.SECURITY.securityTake2.model.Student;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.SECURITY.securityTake2.model.UsernameAndPasswordAuthRequest;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,4 +26,9 @@ public class StudentController {
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException("Student " + studentId + " does not exists"));
     }
+
+//    @PostMapping("/login")
+//    public void login(@RequestBody UsernameAndPasswordAuthRequest authRequest){
+//
+//    }
 }
